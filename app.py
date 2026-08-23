@@ -12,15 +12,6 @@ st.set_page_config(
     page_icon="🎓",
     layout="centered"
 )
-
-
-# ==========================================
-# CUSTOM CSS
-# ==========================================
-
-# ==========================================
-# BACKGROUND PHOTO
-# ==========================================
 # ==========================================
 # BACKGROUND PHOTO
 # ==========================================
@@ -28,16 +19,18 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+/* Full Page Background Image */
 .stApp {
-    background-image: url("student.jpg");
+    background-image: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* Main content box */
+/* White transparent content box */
 .block-container {
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.90);
     padding: 2rem;
     border-radius: 20px;
     margin-top: 30px;
@@ -57,10 +50,12 @@ h1 {
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
+    background-color: #2563eb;
+    color: white;
 }
 
 </style>
-""", unsafe_allow_html=True) 
+""", unsafe_allow_html=True)
 
 
 # ==========================================
