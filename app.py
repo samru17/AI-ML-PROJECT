@@ -30,11 +30,11 @@ st.markdown("""
 
 /* Main Content Box */
 .block-container {
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     padding: 2rem;
     border-radius: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 /* Title */
