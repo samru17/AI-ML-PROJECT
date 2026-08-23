@@ -19,18 +19,18 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Full Page Background Image */
+/* Full Background Image */
 .stApp {
-    background-image: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80");
+    background-image: url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* White transparent content box */
+/* Main Content Box */
 .block-container {
-    background-color: rgba(255, 255, 255, 0.90);
+    background-color: rgba(255, 255, 255, 0.92);
     padding: 2rem;
     border-radius: 20px;
     margin-top: 30px;
@@ -52,11 +52,16 @@ h1 {
     font-weight: bold;
     background-color: #2563eb;
     color: white;
+    border: none;
+}
+
+.stButton > button:hover {
+    background-color: #1d4ed8;
+    color: white;
 }
 
 </style>
 """, unsafe_allow_html=True)
-
 
 # ==========================================
 # LOAD MODEL
@@ -221,25 +226,55 @@ if st.button("🔮 Predict Student Result"):
     st.divider()
 
 
-    # ======================================
-    # DISPLAY RESULT
-    # ======================================
+  # ==========================================
+# DISPLAY RESULT
+# ==========================================
 
-    st.subheader("🎯 Prediction Result")
+st.subheader("🎯 Prediction Result")
 
+# Check different possible PASS outputs
+if str(result).lower() in ["pass", "true", "1"]:
 
-    if str(result).lower() == "pass":
+    st.success("🎉 PASS — Student is likely to PASS!")
 
-        st.success(
-            "🎉 PASS — Student is likely to PASS!"
-        )
+    # Celebration animation
+    st.balloons()
 
-    else:
+    st.markdown("""
+    <div style="
+        background-color: #d1fae5;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #065f46;
+        margin-top: 15px;
+    ">
+        🎉 Congratulations! 🎓<br>
+        Great performance! Keep studying and achieving your goals! 🚀
+    </div>
+    """, unsafe_allow_html=True)
 
-        st.error(
-            "⚠️ FAIL — Student is likely to FAIL."
-        )
+else:
 
+    st.error("⚠️ FAIL — Student is likely to FAIL.")
+
+    st.markdown("""
+    <div style="
+        background-color: #fee2e2;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #991b1b;
+        margin-top: 15px;
+    ">
+        💪 Don't worry! Keep practicing and studying.<br>
+        You can improve your performance! 📚
+    </div>
+    """, unsafe_allow_html=True)
 
     # ======================================
     # PREDICTION PROBABILITY
